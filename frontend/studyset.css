@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Sets</title>
+  <link rel="stylesheet" href="./studyset.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SS</div>
+      <div>
+        <div class="title">Study Sets</div>
+        <div class="subtitle">Create • View • Delete</div>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="btnNew" class="btn primary">+ New Set</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- LEFT: list -->
+    <section class="panel">
+      <div class="panel-header">
+        <h2>My Sets</h2>
+        <div class="search-wrap">
+          <input id="searchInput" class="input" placeholder="Search sets..." />
+        </div>
+      </div>
+
+      <div id="listState" class="state">Loading…</div>
+      <div id="setList" class="set-list"></div>
+    </section>
+
+    <!-- RIGHT: details + create form -->
+    <section class="panel">
+      <!-- VIEW MODE -->
+      <div id="viewWrap" class="view-wrap hidden">
+        <div class="view-header">
+          <div>
+            <h2 id="viewTitle">Study Set Title</h2>
+            <div class="meta">
+              <span id="viewCount">0 cards</span>
+              <span class="dot">•</span>
+              <span id="viewVisibility">visibility</span>
+            </div>
+          </div>
+
+          <div class="view-actions">
+            <button id="btnStudy" class="btn">Study</button>
+            <button id="btnDelete" class="btn danger">Delete</button>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 class="section-title">Cards</h3>
+        <div id="cardList" class="card-list"></div>
+
+        <div class="divider"></div>
+
+        <!-- SIMPLE STUDY MODE (flashcards) -->
+        <div id="studyWrap" class="study-wrap hidden">
+          <div class="study-top">
+            <h3 class="section-title">Flashcards</h3>
+            <div class="study-controls">
+              <button id="btnPrev" class="btn">Prev</button>
+              <button id="btnFlip" class="btn primary">Flip</button>
+              <button id="btnNext" class="btn">Next</button>
+            </div>
+          </div>
+
+          <div class="flashcard" id="flashcard" role="button" tabindex="0" aria-label="Flashcard (click to flip)">
+            <div class="flashcard-inner" id="flashcardInner">
+              <div class="flashcard-face flashcard-front">
+                <div class="label">TERM</div>
+                <div id="fcFront" class="fc-text">—</div>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                <div class="label">DEFINITION</div>
+                <div id="fcBack" class="fc-text">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="study-footer">
+            <span id="studyCounter">0 / 0</span>
+            <span class="hint">Tip: click card or press Space to flip</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPTY STATE -->
+      <div id="emptyWrap" class="empty-wrap">
+        <h2>Pick a study set</h2>
+        <p>Select one on the left, or create a new one.</p>
+        <button id="btnNew2" class="btn primary">+ New Set</button>
+      </div>
+
+      <!-- CREATE MODE -->
+      <div id="createWrap" class="create-wrap hidden">
+        <div class="create-header">
+          <h2>Create Study Set</h2>
+          <button id="btnCancelCreate" class="btn">Cancel</button>
+        </div>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>Title</span>
+            <input id="createTitle" class="input" placeholder="e.g., CSI-4650 Exam 1" maxlength="120" />
+          </label>
+
+          <label class="field">
+            <span>Visibility</span>
+            <select id="createVisibility" class="input">
+              <option value="private">Private</option>
+              <option value="public">Public</option>
+            </select>
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Description (optional)</span>
+          <textarea id="createDesc" class="textarea" rows="3" placeholder="What is this set about?"></textarea>
+        </label>
+
+        <div class="divider"></div>
+
+        <div class="cards-builder">
+          <div class="cards-builder-header">
+            <h3 class="section-title">Cards</h3>
+            <button id="btnAddCardRow" class="btn">+ Add card</button>
+          </div>
+
+          <div id="builderRows" class="builder-rows"></div>
+
+          <div class="builder-footer">
+            <button id="btnCreateSubmit" class="btn primary">Create Set</button>
+            <div id="createMsg" class="msg"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./studysets.js"></script>
+</body>
+</html>
