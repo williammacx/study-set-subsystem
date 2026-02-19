@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizoodle | Study</title>
+
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="./studyset.css" />
+
+    <script type="module" src="./study.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 flex flex-col h-full">
+    <header class="bg-white border-b border-gray-200 py-5 px-6">
+      <p class="text-2xl font-bold text-indigo-600">Quizoodle</p>
+      <nav class="nav">
+        <a href="../">Courses</a>
+        <a href="../assignments/">Assignments</a>
+        <a class="active" href="./">Study Sets</a>
+      </nav>
+    </header>
+
+    <main class="grow max-w-6xl mx-auto p-4 pt-8 w-full flex flex-col gap-4">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title" id="setTitle">Loading…</h2>
+          <p class="section-subtitle" id="setMeta"></p>
+        </div>
+
+        <div class="flash-wrap">
+          <div class="flashcard" id="flashcard" tabindex="0">
+            <div class="flash-inner" id="inner">
+              <div class="flash-face">
+                <div class="flash-label">FRONT</div>
+                <div class="flash-text" id="frontText">—</div>
+              </div>
+              <div class="flash-face back">
+                <div class="flash-label">BACK</div>
+                <div class="flash-text" id="backText">—</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flash-controls">
+            <button class="btn" id="prevBtn" type="button">Prev</button>
+            <div class="helper-text" id="counter">0 / 0</div>
+            <button class="btn" id="nextBtn" type="button">Next</button>
+          </div>
+
+          <p class="helper-text">
+            Click the card (or press Space) to flip • Arrow keys = prev/next
+          </p>
+
+          <a class="open-link" href="./index.html">← Back to sets</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
