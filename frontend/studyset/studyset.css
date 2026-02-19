@@ -1,1 +1,260 @@
-blah
+/* Layout helpers (matches your assignment subsystem style patterns) */
+.section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.section-subtitle {
+  margin: 0;
+  color: var(--muted-foreground);
+}
+
+/* User switch (same class name as assignments) */
+.user-switch label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin: 10px 0 6px 0;
+}
+
+.user-switch select {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--input-background);
+  color: var(--foreground);
+}
+
+/* Create form */
+.create-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 12px;
+}
+
+.create-span-2 {
+  grid-column: 1 / -1;
+}
+
+.field-label {
+  display: block;
+  font-size: 12px;
+  color: var(--muted-foreground);
+  margin-bottom: 6px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--input-background);
+  color: var(--foreground);
+  outline: none;
+}
+
+.field-textarea {
+  width: 100%;
+  min-height: 90px;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--input-background);
+  color: var(--foreground);
+  outline: none;
+}
+
+.create-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+  border: 1px solid var(--primary);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.helper-text {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+/* List card (mirrors assignment-card vibe) */
+.studyset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.studyset-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.studyset-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.studyset-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 12px;
+  border-radius: 999px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  color: var(--muted-foreground);
+  background: var(--input-background);
+}
+
+.studyset-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--foreground);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studyset-meta {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted-foreground);
+}
+
+.studyset-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.open-link {
+  font-size: 13px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.open-link:hover {
+  text-decoration: underline;
+}
+
+/* Flashcard page */
+.flash-wrap {
+  display: grid;
+  gap: 12px;
+}
+
+.flashcard {
+  height: 320px;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--card);
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+}
+
+.flash-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 160ms ease;
+}
+
+.flash-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.flash-face {
+  position: absolute;
+  inset: 0;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.flash-face.back {
+  transform: rotateY(180deg);
+}
+
+.flash-label {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted-foreground);
+  margin-bottom: 12px;
+}
+
+.flash-text {
+  font-size: 28px;
+  color: var(--foreground);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.flash-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--input-background);
+  color: var(--foreground);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(1.03);
+}
