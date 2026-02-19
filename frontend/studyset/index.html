@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Sets</title>
+  <link rel="stylesheet" href="studyset.css" />
+</head>
+<body>
+
+  <h1>Study Sets</h1>
+
+  
+  <section>
+    <h2>Create Study Set</h2>
+
+    <input id="title" placeholder="Study set title" />
+
+    <select id="visibility">
+      <option value="private">Private</option>
+      <option value="public">Public</option>
+    </select>
+
+    <div id="cards"></div>
+
+    <button id="addCard">Add Card</button>
+    <button id="createSet">Create Study Set</button>
+  </section>
+
+  <hr>
+
+  <!-- LIST STUDY SETS -->
+  <section>
+    <h2>Your Study Sets</h2>
+    <div id="studySetList"></div>
+  </section>
+
+  <hr>
+
+  <!-- VIEW STUDY SET -->
+  <section id="viewer" style="display:none;">
+    <h2 id="viewTitle"></h2>
+
+    <div id="flashcard" class="flashcard">
+      <div id="flashcardInner" class="flashcard-inner">
+        <div class="front" id="cardFront"></div>
+        <div class="back" id="cardBack"></div>
+      </div>
+    </div>
+
+    <br>
+
+    <button id="prevCard">Prev</button>
+    <button id="flipCard">Flip</button>
+    <button id="nextCard">Next</button>
+
+    <br><br>
+
+    <button id="deleteSet">Delete Study Set</button>
+  </section>
+
+  <script type="module" src="studysets.js"></script>
+
+</body>
+</html>
